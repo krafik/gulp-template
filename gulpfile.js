@@ -24,7 +24,7 @@
  import { images } from './gulp/tasks/images.js';
  import { otfToTtf, ttfToWoff, fonstStyle } from './gulp/tasks/fonts.js';
  import { svgSprive } from './gulp/tasks/svgSprite.js';
- import { zip } from './gulp/tasks/zip.js';
+//  import { zip } from './gulp/tasks/zip.js';
  //наблюдаем за изменениями в файлах
  function watcher() {
      //путь к файлам, что нужно сделать. и вписывать в сценарий.
@@ -43,17 +43,16 @@ const mainTasks = gulp.series(fonts, gulp.parallel(copy,html, scss, js, images))
 
 //построение сценарием выполнения задач. 
 //используем последовательнный скрипт. series.
-const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher ));
-//  server
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher,server ));
 
 const build = gulp.series(reset, mainTasks);
-const deployZIP = gulp.series(reset, mainTasks, zip)
+// const deployZIP = gulp.series(reset, mainTasks, zip)
 
 
 //экспорт сценариев
 export {dev}
 export {build}
-export {deployZIP}
+// export {deployZIP}
 
  //выполнение сценария по умолчанию 
  gulp.task('default', dev);
