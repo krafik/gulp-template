@@ -1,0 +1,18 @@
+body{
+    background-color: #000;
+    span{
+        color: red;
+    }
+    // background: url("@img/cover.jpg") 0 0 no-repeat;
+} 
+
+//gulp-webp-css
+
+// @supports (-webkit-appearance: none){
+//     body{
+//         background: url(../img/icon/close.svg) 0 0 no-repeat;
+//     }
+//     .block{
+//         background: url(../img/cover.webp);
+//     }
+// }
